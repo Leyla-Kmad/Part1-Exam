@@ -21,7 +21,7 @@ const t2Arr1 = [ 'typescript', 'python' , 'java' ];
 const t2Arr2  = [ 'javascript', 'c', 'javascript', 'c#'];
 
 //#1 solution
-const joinedArr = arr1.concat(arr2);
+const joinedArr = t2Arr1.concat(t2Arr2);
 
 
 //#2 solution
@@ -41,14 +41,24 @@ const t3Arr1 = [ 'typescript', 'python' , 'javascript', 'typescript' ];
 const t3Arr2  = [ 'javascript', 'c', 'typescript', 'c#'];
 
 function commonItems(arrA, arrB) {
-  let newArr =[];
-  for(let i of arrA) {
-    if(arrB.includes(i) && (newArr.includes(i)=== false)){
-      newArr.push(i);
+  function innerCommonItems(arrA, arrB) {
+    let newArr =[];
+    for(let i of arrA) {
+      if(arrB.includes(i) && (newArr.includes(i)=== false)){
+        newArr.push(i);
+      }
     }
+    return newArr;
   }
-  return newArr;
+  if(arrA.length <= arrB.length){
+    return innerCommonItems(arrA, arrB);
+  } else{
+    return innerCommonItems(arrB, arrA);
+  }
+
 }
+
+
 
 ////////////////////////////////////////////////////////////////////////
 //task 4 
@@ -132,7 +142,7 @@ function subArr(arr) {
             objDownload = elem["value"];
           }
           if(elem["type"] == "upload"){
-            objUpload = el["value"];
+            objUpload = elem["value"];
           }
         }
       }
