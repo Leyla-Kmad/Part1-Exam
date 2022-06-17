@@ -118,9 +118,9 @@ metrics: [
 
 function subArr(arr) {
   let newArr = [];
-  let objName = {};
-  let objDownload ={};
-  let objUpload ={};
+  let objName;
+  let objDownload;
+  let objUpload;
   for(let obj of arr) {
     for (const [key, value] of Object.entries(obj)) {
       if(key == "company") {
