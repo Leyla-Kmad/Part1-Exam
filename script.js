@@ -127,11 +127,11 @@ function subArr(arr) {
         objName = value["name"];
       }
       if(key == "metrics"){
-        for(let el of value){
-          if(el["type"] == "download"){
-            objDownload = el["value"];
+        for(let elem of value){
+          if(elem["type"] == "download"){
+            objDownload = elem["value"];
           }
-          if(el["type"] == "upload"){
+          if(elem["type"] == "upload"){
             objUpload = el["value"];
           }
         }
